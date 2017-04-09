@@ -4,10 +4,10 @@ class QuickReplyItem(object):
             if not title and not payload:
                 raise ValueError('<Message> must be set')
 
-        if len(title) > 20:
+        if title and len(title) > 20:
             raise ValueError('Quick reply title limit is 20 characters')
 
-        if len(payload) > 1000:
+        if payload and len(payload) > 1000:
             raise ValueError('Quick reply payload limit is 1000 characters')
 
         self.content_type = content_type
